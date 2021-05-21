@@ -1,0 +1,15 @@
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content: center;
+}
+
+.square {
+    height: 50px;
+    width: 50px;
+}
