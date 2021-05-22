@@ -1,16 +1,19 @@
 const container = document.querySelector('.container');
-const buttons = document.querySelector('.buttons');
+const buttons = document.querySelectorAll('.buttons');
+const grayBtn = document.createElement('button');
+const blackBtn = document.createElement('button');
+const rgbBtn = document.createElement('button');
+const resetBtn = document.createElement('button');
 
 function populateSquares(num) {
     for (let i = 0; i < (num * num); i++) {
         const square = document.createElement('div');
-        container.style.gridColumnEnd = `${num}`;
-        container.style.gridRowEnd = `${num}`;
-        square.classList.add('square');
         square.style.border = '1px solid black';
-        container.appendChild(square);
+        container.appendChild(square).classList.add('square');
+        container.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
+        container.style.gridTemplateRows = `repeat(${num}, 1fr)`;
     }
 
 }
 
-populateSquares(2);
+populateSquares(4);

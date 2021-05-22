@@ -4,12 +4,13 @@ h1 {
 
 .container {
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .square {
+    align-items: center;
     height: 50px;
     width: 50px;
 }
