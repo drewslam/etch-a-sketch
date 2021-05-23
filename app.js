@@ -1,9 +1,10 @@
 const container = document.querySelector('.container');
-const buttons = document.querySelectorAll('.buttons');
+const buttons = document.querySelector('.buttons');
 const grayBtn = document.createElement('button');
 const blackBtn = document.createElement('button');
 const rgbBtn = document.createElement('button');
 const resetBtn = document.createElement('button');
+const squares = document.querySelectorAll('.square');
 
 function populateSquares(num) {
     for (let i = 0; i < (num * num); i++) {
@@ -16,4 +17,21 @@ function populateSquares(num) {
 
 }
 
-populateSquares(4);
+populateSquares(8);
+
+buttons.appendChild(grayBtn);
+grayBtn.textContent = 'Gray';
+
+function grayColor() {
+    console.log('gray');
+}
+
+function gray() {
+    grayColor();
+}
+
+grayBtn.addEventListener('click', gray);
+
+for (let i = 0; i < squares.length; i++) {
+    squares[i].addEventListener('mouseover', grayColor);
+}
