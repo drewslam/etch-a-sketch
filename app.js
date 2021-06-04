@@ -14,10 +14,10 @@ function populateSquares(num) {
         container.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
         container.style.gridTemplateRows = `repeat(${num}, 1fr)`;
     }
-
 }
 
-populateSquares(16);
+window.addEventListener('load', populateSquares(16));
+
 
 buttons.appendChild(grayBtn);
 grayBtn.textContent = 'Gray';
@@ -69,6 +69,8 @@ function erase() {
 }
 
 
+
+
 grayBtn.addEventListener('click', gray);
 rainbowBtn.addEventListener('click', rainbow);
 blackBtn.addEventListener('click', black)
@@ -77,4 +79,8 @@ resetBtn.addEventListener('click', () => {
     for (let i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = `white`;
     }
+    let gridSize = prompt('Enter a number')
+    if (gridSize < 1 || gridSize >100 || Number.isNaN(gridSize)) {
+        gridSize = prompt('Enter a NUMBER between 1 and 100');
+    } else populateSquares(gridSize);
 })
