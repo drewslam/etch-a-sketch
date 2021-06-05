@@ -6,18 +6,23 @@ const rainbowBtn = document.createElement('button')
 const eraseBtn = document.createElement('button');
 const resetBtn = document.createElement('button');
 
-function populateSquares(num) {
-    for (let i = 0; i < (num * num); i++) {
-        const square = document.createElement('div');
-        square.style.border = '1px none black';
-        container.appendChild(square).classList.add('square');
-        container.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
-        container.style.gridTemplateRows = `repeat(${num}, 1fr)`;
-    }
-}
-
 window.addEventListener('load', populateSquares(16));
+window.addEventListener('load', gray);
+grayBtn.addEventListener('click', gray);
+rainbowBtn.addEventListener('click', rainbow);
+blackBtn.addEventListener('click', black)
+eraseBtn.addEventListener('click', erase)
+resetBtn.addEventListener('click', () => {
+    for (let i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = `white`;
+    }
+    let gridSize = prompt('Enter a number')
+    if (gridSize < 1 || gridSize > 100 || Number.isNaN(gridSize)) {
+        gridSize = prompt('Enter a NUMBER between 1 and 100');
+    } else populateSquares(gridSize);
+})
 
+const squares = document.querySelectorAll('.square');
 
 buttons.appendChild(grayBtn);
 grayBtn.textContent = 'Gray';
@@ -30,7 +35,18 @@ eraseBtn.textContent = 'Erase';
 buttons.appendChild(resetBtn);
 resetBtn.textContent = 'Reset';
 
-const squares = document.querySelectorAll('.square');
+
+
+function populateSquares(num) {
+    for (let i = 0; i < (num * num); i++) {
+        const square = document.createElement('div');
+        square.style.border = '1px none black';
+        square.style.backgroundColor = 'white';
+        container.appendChild(square).classList.add('square');
+        container.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
+        container.style.gridTemplateRows = `repeat(${num}, 1fr)`;
+    }
+}
 
 function gray() {
     for (let i = 0; i < squares.length; i++) {
@@ -71,16 +87,3 @@ function erase() {
 
 
 
-grayBtn.addEventListener('click', gray);
-rainbowBtn.addEventListener('click', rainbow);
-blackBtn.addEventListener('click', black)
-eraseBtn.addEventListener('click', erase)
-resetBtn.addEventListener('click', () => {
-    for (let i = 0; i < squares.length; i++) {
-        squares[i].style.backgroundColor = `white`;
-    }
-    let gridSize = prompt('Enter a number')
-    if (gridSize < 1 || gridSize >100 || Number.isNaN(gridSize)) {
-        gridSize = prompt('Enter a NUMBER between 1 and 100');
-    } else populateSquares(gridSize);
-})
