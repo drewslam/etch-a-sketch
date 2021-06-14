@@ -20,6 +20,8 @@ resetBtn.textContent = 'Reset';
 window.addEventListener('load', populateSquares(16));
 window.addEventListener('load', gray);
 
+let squares = document.querySelectorAll('.square');
+
 function populateSquares(num) {
     for (let i = 0; i < (num * num); i++) {
         const square = document.createElement('div');
@@ -29,8 +31,6 @@ function populateSquares(num) {
         container.style.gridTemplateRows = `repeat(${num}, 1fr)`;
     }
 }
-
-// let squares = document.querySelectorAll('.square');
 
 function gray() {
     for (let i = 0; i < squares.length; i++) {
@@ -80,6 +80,7 @@ resetBtn.addEventListener('click', () => {
     if (gridSize < 4 || gridSize > 64 || Number.isNaN(gridSize)) {
         gridSize = prompt('Enter a NUMBER between 4 and 64');
     } else populateSquares(gridSize);
+    squares = document.querySelectorAll('.square');
+    gray();
 })
 
-const squares = document.querySelectorAll('.square')
