@@ -1,5 +1,9 @@
 html {
-    background-color: skyblue;
+    background-image: linear-gradient(to bottom, rgb(235, 237, 234), rgb(100, 103, 105));
+}
+
+body {
+    margin: auto;
 }
 
 .window {
@@ -10,15 +14,18 @@ html {
     align-content: center;
     width: auto;
     height: auto;
-    background-color: royalblue;
+    background-color: rgb(20, 75, 134, 0.5);
+    margin: auto;
 }
 
 h1 {
     order: -2;
+    font-size: 3em;
     justify-self: center;
     text-align: center;
-    color: rgb(156, 9, 156);
+    color: rgb(57, 55, 54);
     font: sans-serif;
+    margin: auto;
 }
 
 .container {
@@ -27,9 +34,8 @@ h1 {
     display: grid;
     height: 500px;
     width: 500px;
-    margin-left: auto;    
-    margin-right: auto;
-    border: 2px solid pink;
+    margin: auto;
+    border: none;
 }
 
 .square {
@@ -43,20 +49,21 @@ h1 {
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    margin: 1%;
+    margin: 2%;
 }
 
 button {
-    width: 70px;
-    height: 24px;
+    width: 7em;
+    height: 2.75em;
     margin: 1%;
     border: none;
-    border-radius: 7%;
-    background-color: salmon;
-    color: seagreen;
+    border-radius: 0%;
+    background-color: rgb(239, 226, 222, 0.5);
+    color: rgb(57, 55, 54);
 }
 
 button:hover {
-    background-color: seashell;
+    background-color: rgb(100, 103, 105);
+    color: rgb(235, 237, 234);
 }
 
