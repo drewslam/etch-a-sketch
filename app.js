@@ -32,6 +32,12 @@ function populateSquares(num) {
     }
 }
 
+function depopulateSquares() {
+    for (let i = 0; i < squares.length; i++) {
+        squares[i].remove();
+    }
+}
+
 function gray() {
     for (let i = 0; i < squares.length; i++) {
         squares[i].addEventListener('mouseover', () => {
@@ -76,7 +82,8 @@ resetBtn.addEventListener('click', () => {
     for (let i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = `white`;
     }
-    let gridSize = prompt('Enter a number between 4 and 64')
+    depopulateSquares();
+    const gridSize = prompt('Enter a number between 4 and 64')
     if (gridSize < 4 || gridSize > 64 || Number.isNaN(gridSize)) {
         gridSize = prompt('Enter a NUMBER between 4 and 64');
     } else populateSquares(gridSize);
