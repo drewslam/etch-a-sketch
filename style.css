@@ -3,8 +3,9 @@ html {
 }
 
 body {
-    margin: auto;
-}
+    height: 100%;
+    width: 100%;
+} 
 
 .window {
     display: flex;
@@ -43,9 +44,7 @@ h1 {
     height: 100%;
     width: 100%;
     opacity: 100%;
-    border-style: solid;
-    /* border-color: aqua 25%; */
-    border-width: 0.0125rem;
+    border-style: none;
 }
 
 .buttons {

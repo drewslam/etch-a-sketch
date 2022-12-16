@@ -42,7 +42,7 @@ function gray() {
     for (let i = 0; i < squares.length; i++) {
         squares[i].addEventListener('mouseover', () => {
             let grayColor = Math.floor(Math.random() * 255);
-            squares[i].style.backgroundColor = `rgb(${grayColor}, ${grayColor}, ${grayColor})`
+            squares[i].style.backgroundColor = `rgb(${grayColor}, ${grayColor}, ${grayColor})`;
         });
     }
 }
@@ -53,7 +53,7 @@ function rainbow() {
             let red = Math.floor(Math.random() * 255);
             let green = Math.floor(Math.random() * 255);
             let blue = Math.floor(Math.random() * 255);
-            squares[i].style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
+            squares[i].style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
         });
     }
 }
@@ -61,7 +61,7 @@ function rainbow() {
 function black() {
     for (let i = 0; i < squares.length; i++) {
         squares[i].addEventListener('mouseover', () => {
-            squares[i].style.backgroundColor = `black`
+            squares[i].style.backgroundColor = `black`;
         });
     }
 }
@@ -76,18 +76,15 @@ function erase() {
 
 grayBtn.addEventListener('click', gray);
 rainbowBtn.addEventListener('click', rainbow);
-blackBtn.addEventListener('click', black)
-eraseBtn.addEventListener('click', erase)
+blackBtn.addEventListener('click', black);
+eraseBtn.addEventListener('click', erase);
 resetBtn.addEventListener('click', () => {
-    for (let i = 0; i < squares.length; i++) {
-        squares[i].style.backgroundColor = `white`;
-    }
     depopulateSquares();
-    const gridSize = prompt('Enter a number between 4 and 64')
-    if (gridSize < 4 || gridSize > 64 || Number.isNaN(gridSize)) {
+    let gridSize = prompt('Enter a number between 4 and 64');
+    while (gridSize < 4 || gridSize > 64 || Number.isNaN(gridSize)) {
         gridSize = prompt('Enter a NUMBER between 4 and 64');
-    } else populateSquares(gridSize);
+    }
+    populateSquares(gridSize);
     squares = document.querySelectorAll('.square');
     gray();
-})
-
+});
