@@ -1,21 +1,10 @@
 const container = document.querySelector('.container');
 const buttons = document.querySelector('.buttons');
-const grayBtn = document.createElement('button');
-const blackBtn = document.createElement('button');
-const rainbowBtn = document.createElement('button')
-const eraseBtn = document.createElement('button');
-const resetBtn = document.createElement('button');
-
-buttons.appendChild(grayBtn);
-grayBtn.textContent = 'Gray';
-buttons.appendChild(rainbowBtn);
-rainbowBtn.textContent = 'Rainbow';
-buttons.appendChild(blackBtn);
-blackBtn.textContent = 'Black';
-buttons.appendChild(eraseBtn);
-eraseBtn.textContent = 'Erase';
-buttons.appendChild(resetBtn);
-resetBtn.textContent = 'Reset';
+const grayBtn = document.querySelector('.grayBtn');
+const blackBtn = document.querySelector('.blackBtn');
+const rainbowBtn = document.querySelector('.rainbowBtn');
+const eraseBtn = document.querySelector('.eraseBtn');
+const resetBtn = document.querySelector('.resetBtn');
 
 window.addEventListener('load', populateSquares(16));
 window.addEventListener('load', gray);
